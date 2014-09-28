@@ -60,3 +60,10 @@
 (scale-list2 (list 1 2 3 4 5 6) 10)
 	       
       
+(define (count-tree x)
+  (cond ((null? x) 0)
+	((not (pair? x)) 1)
+	(else
+	 (+ (count-tree (car x))
+	    (count-tree (cdr x))))))
+
